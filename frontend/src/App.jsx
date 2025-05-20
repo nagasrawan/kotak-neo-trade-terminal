@@ -4,7 +4,7 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const ws = new WebSocket('ws://localhost:5000');
+    const ws = new WebSocket('wss://neo-backend-kb45.onrender.com');
     ws.onmessage = (e) => {
       const msg = JSON.parse(e.data);
       setData(prev => [msg, ...prev.slice(0, 4)]);
